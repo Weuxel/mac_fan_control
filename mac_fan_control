@@ -1,0 +1,18 @@
+#!/sbin/runscript
+# Norman Riess 07.11.2014
+
+depend() {
+	after modules
+}
+
+start() {
+	ebegin "Starting mac_fan_control"
+	/opt/mac_fan_control/mac_fan_control.py start
+	eend $?
+}
+
+stop() {
+	ebegin "Stopping mac_fan_control"
+	/opt/mac_fan_control/mac_fan_control.py stop
+	eend $?
+}
